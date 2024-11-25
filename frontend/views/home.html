@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCLMP - Smart Collaborative Learning Management Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles to enhance Tailwind CSS */
+        .hero-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="/public/images/logo.png" alt="SCLMP Logo" class="h-10 mr-4">
+                <h1 class="text-2xl font-bold text-purple-700">SCLMP</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#features" class="text-gray-700 hover:text-purple-600">Features</a>
+                <a href="#about" class="text-gray-700 hover:text-purple-600">About</a>
+                <div class="space-x-3">
+                    <a href="login.html" class="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 transition">Login</a>
+                    <a href="signup.html" class="border border-purple-600 text-purple-600 px-4 py-2 rounded-md hover:bg-purple-100 transition">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg text-white pt-24 pb-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-extrabold mb-6">Transform Learning with SCLMP</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                A comprehensive Learning Management System designed to enhance collaboration, 
+                streamline education, and empower learners and educators.
+            </p>
+            <div class="space-x-4">
+                <a href="signup.html" class="bg-white text-purple-700 px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition">
+                    Get Started
+                </a>
+                <a href="#features" class="border border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-purple-700 transition">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Platform Features</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature Card 1 -->
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md text-center">
+                    <svg class="w-16 h-16 mx-auto mb-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-3">Course Management</h3>
+                    <p>Create, organize, and manage courses with ease. Design lessons, assignments, and track student progress.</p>
+                </div>
+
+                <!-- Feature Card 2 -->
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md text-center">
+                    <svg class="w-16 h-16 mx-auto mb-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-3">Assessment Tools</h3>
+                    <p>Create comprehensive quizzes, tests, and assignments. Evaluate and track student knowledge effectively.</p>
+                </div>
+
+                <!-- Feature Card 3 -->
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md text-center">
+                    <svg class="w-16 h-16 mx-auto mb-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-3">Collaboration</h3>
+                    <p>Engage through discussion forums, group projects, and interactive learning environments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mr-12">
+                <h2 class="text-4xl font-bold mb-6">About SCLMP</h2>
+                <p class="text-gray-600 mb-4">
+                    SCLMP (Smart Collaborative Learning Management Platform) is designed to revolutionize 
+                    the way education is delivered and experienced. Our platform bridges the gap between 
+                    instructors and students, providing powerful tools for effective learning.
+                </p>
+                <p class="text-gray-600">
+                    With intuitive interfaces for administrators, teachers, and students, 
+                    SCLMP makes educational management seamless and engaging.
+                </p>
+            </div>
+            <div class="md:w-1/2">
+                <img src="/public/images/education-illustration.png" alt="Education Illustration" class="rounded-lg shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-purple-500">SCLMP</h3>
+                <p class="text-gray-400 mt-2">Smart Collaborative Learning Management Platform</p>
+            </div>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="text-gray-400 hover:text-white">About</a>
+                <a href="#" class="text-gray-400 hover:text-white">Contact</a>
+                <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+            </div>
+            <p class="text-gray-500">&copy; 2024 SCLMP. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Optional smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - SCLMP</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .signup-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex items-center justify-center signup-bg px-4 py-8">
+        <div class="bg-white shadow-xl rounded-xl overflow-hidden w-full max-w-md">
+            <div class="p-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-purple-700 mb-2">Create Account</h2>
+                    <p class="text-gray-600">Join SCLMP Learning Platform</p>
+                </div>
+                
+                <form id="signupForm" class="space-y-6">
+                    <div>
+                        <label for="fullName" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                        <input 
+                            type="text" 
+                            id="fullName" 
+                            required 
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                            placeholder="Enter your full name"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            required 
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                            placeholder="Enter your email"
+                        >
+                        <p id="emailError" class="text-red-500 text-xs mt-2 hidden">Please enter a valid email address.</p>
+                    </div>
+                    
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                        <div class="relative">
+                            <input 
+                                type="password" 
+                                id="password" 
+                                required 
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                placeholder="Create a strong password"
+                            >
+                            <button type="button" id="togglePassword" class="absolute right-3 top-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825a7.5 7.5 0 1 0-3.75 0M12 10c0 1.104-.895 2-2 2s-2-.896-2-2 2-.896 2-2 2 .896 2 2z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <p id="passwordError" class="text-red-500 text-xs mt-2 hidden">Password must be at least 7 characters long, with numbers, letters, and a special character.</p>
+                    </div>
+
+                    <div>
+                        <label for="userRole" class="block text-sm font-medium text-gray-700 mb-2">Select Role</label>
+                        <select 
+                            id="userRole" 
+                            required 
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        >
+                            <option value="" disabled>Choose Your Role</option>
+                            <option value="student">Student</option>
+                            <option value="teacher">Teacher</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <button 
+                            type="submit" 
+                            id="submitBtn"
+                            class="w-full bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700 transition duration-300"
+                        >
+                            Sign Up
+                        </button>
+                    </div>
+                    
+                    <div id="formFeedback" class="hidden text-center mt-4">
+                        <p class="text-gray-600">Processing...</p>
+                    </div>
+                </form>
+                
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-gray-600">
+                        Already have an account? 
+                        <a href="login.html" class="text-purple-600 hover:text-purple-500">
+                            Login
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const userRole = document.getElementById('userRole').value;
+
+            const emailError = document.getElementById('emailError');
+            const passwordError = document.getElementById('passwordError');
+            const formFeedback = document.getElementById('formFeedback');
+            
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{7,}$/;
+
+            // Hide error messages initially
+            emailError.classList.add('hidden');
+            passwordError.classList.add('hidden');
+            formFeedback.classList.add('hidden');
+
+            let valid = true;
+
+            // Email validation
+            if (!emailRegex.test(email)) {
+                emailError.classList.remove('hidden');
+                valid = false;
+            }
+
+            // Password validation
+            if (!passwordRegex.test(password)) {
+                passwordError.classList.remove('hidden');
+                valid = false;
+            }
+
+            if (valid) {
+                formFeedback.classList.remove('hidden');
+                // TODO: Add actual signup authentication logic
+                setTimeout(() => {
+                    console.log('Signup attempted', { fullName, email, password, userRole });
+                    formFeedback.classList.add('hidden');
+                    // Replace with actual backend call
+                }, 2000); // Simulate a delay for feedback
+            }
+        });
+
+        // Toggle password visibility
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordField = document.getElementById('password');
+            const type = passwordField.type === 'password' ? 'text' : 'password';
+            passwordField.type = type;
+            this.querySelector('svg').classList.toggle('text-gray-500');
+            this.querySelector('svg').classList.toggle('text-purple-500');
+        });
+    </script>
+</body>
+</html>
