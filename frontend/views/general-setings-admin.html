@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCLMP - General Settings</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .dashboard-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="/public/images/logo.png" alt="SCLMP Logo" class="h-10 mr-4">
+                <h1 class="text-2xl font-bold text-purple-700">General Settings</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="/admin-dashboard.html" class="text-purple-600 hover:text-purple-800">Dashboard</a>
+                <a href="/login.html" class="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 transition">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="dashboard-bg text-white pt-24 pb-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl font-extrabold mb-4">Platform General Settings</h1>
+            <p class="text-xl mb-6">Configure Platform-Wide Settings</p>
+        </div>
+    </header>
+
+    <section class="py-12 px-4">
+        <div class="container mx-auto max-w-2xl bg-white p-8 rounded-lg shadow-md">
+            <form id="generalSettingsForm">
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="platformName">
+                        Platform Name
+                    </label>
+                    <input type="text" id="platformName" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500" value="SCLMP Learning Platform">
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="defaultLanguage">
+                        Default Language
+                    </label>
+                    <select id="defaultLanguage" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        <option>English</option>
+                        <option>Spanish</option>
+                        <option>French</option>
+                    </select>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">
+                        Theme Color
+                    </label>
+                    <div class="flex space-x-4">
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="theme" class="form-radio" checked>
+                            <span class="ml-2 bg-purple-600 text-white px-4 py-2 rounded">Purple</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="theme" class="form-radio">
+                            <span class="ml-2 bg-blue-600 text-white px-4 py-2 rounded">Blue</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="theme" class="form-radio">
+                            <span class="ml-2 bg-green-600 text-white px-4 py-2 rounded">Green</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">
+                        Maintenance Mode
+                    </label>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="maintenanceMode" class="form-checkbox h-5 w-5 text-purple-600">
+                        <label for="maintenanceMode" class="ml-2 text-gray-700">
+                            Enable Maintenance Mode
+                        </label>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white text-center py-4 mt-12">
+        <p>&copy; 2024 SCLMP. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('generalSettingsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Settings saved successfully!');
+        });
+    </script>
+</body>
+</html>

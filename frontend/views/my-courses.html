@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCLMP - My Courses</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .dashboard-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="/public/images/logo.png" alt="SCLMP Logo" class="h-10 mr-4">
+                <h1 class="text-2xl font-bold text-purple-700">SCLMP Teacher</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="space-x-3">
+                    <a href="#" class="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 transition">
+                        Logout
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="dashboard-bg text-white pt-24 pb-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl font-extrabold mb-4">My Courses</h1>
+            <p class="text-xl mb-6">Manage and View Your Current Courses</p>
+        </div>
+    </header>
+
+    <!-- Courses Content -->
+    <section class="py-12 px-4">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Course Card Example -->
+                <div class="card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Introduction to Computer Science</h3>
+                    <p class="text-gray-600 mb-4">Fall 2024 - CS101</p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500">Students:</span>
+                            <span class="text-purple-600 font-bold">25</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500">Assignments:</span>
+                            <span class="text-purple-600 font-bold">8</span>
+                        </div>
+                        <a href="#" class="block bg-purple-100 text-purple-800 py-2 px-4 rounded hover:bg-purple-200 text-center mt-4">
+                            View Course Details
+                        </a>
+                    </div>
+                </div>
+                <!-- More Course Cards Can Be Added Here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-purple-500">SCLMP</h3>
+                <p class="text-gray-400 mt-2">Smart Collaborative Learning Management Platform</p>
+            </div>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="text-gray-400 hover:text-white">Dashboard</a>
+                <a href="#" class="text-gray-400 hover:text-white">Help</a>
+                <a href="#" class="text-gray-400 hover:text-white">Contact Support</a>
+            </div>
+            <p class="text-gray-500">&copy; 2024 SCLMP. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

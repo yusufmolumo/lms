@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCLMP - Active Courses</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .dashboard-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .course-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="/public/images/logo.png" alt="SCLMP Logo" class="h-10 mr-4">
+                <h1 class="text-2xl font-bold text-purple-700">SCLMP Student</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="dashboard.html" class="text-purple-600 mr-4">Dashboard</a>
+                <a href="#" onclick="logoutUser()" class="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 transition">
+                    Logout
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="dashboard-bg text-white pt-24 pb-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl font-extrabold mb-4">Active Courses</h1>
+            <p class="text-xl mb-6">Your Currently Enrolled Courses</p>
+        </div>
+    </header>
+
+    <!-- Courses Content -->
+    <section class="py-12 px-4">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Course Card Template -->
+                <div class="course-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="mb-4">
+                        <h3 class="text-2xl font-bold text-purple-700">Web Development</h3>
+                        <p class="text-gray-600">Intermediate Level</p>
+                    </div>
+                    <div class="mb-4">
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">In Progress</span>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>Progress</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-purple-600 h-2.5 rounded-full" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="mt-6 grid grid-cols-2 gap-4">
+                        <a href="#" class="bg-purple-100 text-purple-800 py-2 px-4 rounded hover:bg-purple-200 text-center text-sm">
+                            Course Details
+                        </a>
+                        <a href="#" class="bg-purple-100 text-purple-800 py-2 px-4 rounded hover:bg-purple-200 text-center text-sm">
+                            Continue Learning
+                        </a>
+                    </div>
+                </div>
+
+                <!-- More Course Cards can be added similarly -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-purple-500">SCLMP</h3>
+                <p class="text-gray-400 mt-2">Smart Collaborative Learning Management Platform</p>
+            </div>
+            <p class="text-gray-500">&copy; 2024 SCLMP. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function logoutUser() {
+            alert("You have successfully logged out!");
+            window.location.href = '/login';
+        }
+    </script>
+</body>
+</html>
